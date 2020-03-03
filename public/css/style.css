@@ -32,15 +32,16 @@ a {
 form{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  margin: 0px 0px 8px;
+  margin: 2vw;
 }
 .fieldset{
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 .field_input,
 .field_btn{
@@ -51,13 +52,21 @@ form{
   margin: 0px 0px 8px;
 }
 .field_input{
-  margin: 8px 8px 8px 0px;
+  margin: 8px;
 }
 input[type="submit"]{
   padding: 0 4px;
 }
+.vue{
+  margin: 2vw;
+  padding: 0px;
+  border: 1px solid #ccc;
+}
 .vue ul{
-  margin: 0 0 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  margin: -1px -1px 0px;
   padding: 0;
 }
 .vue ul li{
@@ -68,7 +77,8 @@ input[type="submit"]{
 }
 .tabs li.nav-item ,
 .tabs label {
-  float: left;
+  width: 50%;
+  margin: 0px;
   padding: 10px 20px;
   border: 1px solid #ccc;
   cursor: pointer;
@@ -87,9 +97,8 @@ input[type="submit"]{
 }
 .contents{
   overflow: hidden;
-  margin: -1px 10px 0px 10px;
+  margin: 0px;
   padding: 10px;
-  border: 1px solid #ccc;
   box-sizing: border-box;
 }
 

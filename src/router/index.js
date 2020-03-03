@@ -10,11 +10,6 @@ const routes = [
     component: () => import('../views/Top.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
-  },
-  {
     path: '/form',
     name: 'Form',
     component: () => import('../views/Form.vue')
@@ -23,7 +18,7 @@ const routes = [
     path: '/result',
     name: 'Result',
     component: () => import('../views/Result.vue')
-  }
+  },
 ]
 
 const router = new VueRouter({
