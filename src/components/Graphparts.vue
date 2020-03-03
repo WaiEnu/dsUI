@@ -1,6 +1,6 @@
 <template>
   <div class="graphparts">
-    <div class="contents" v-if="activePageName == 'origin'">
+    <div class="contents">
       <div id="graph_origin">
         ## graph_o ##
       </div>
