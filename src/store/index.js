@@ -6,21 +6,35 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     length:'100',
+    activePageName: 'origin',
+    icons: [
+      {
+        id: 'origin',
+        text: 'origin'
+      },
+      {
+        id: 'mutate',
+        text: 'mutate'
+      },
+    ],
   },
   getters: {
-    getLength(state){
-      return state.length
+    activePageName(state){
+      return state.activePageName
+    },
+    icons(state){
+      return state.icons
     }
   },
   mutations: {
-    setLength(state,payload){
-      state.length = payload.length
+    setActivePageName(state,payload) {
+      state.activePageName = payload
     }
   },
   actions: {
-    setLength({ commit }){
-      commit('setLength')
-    },
+    setActivePageName({ commit },e) {
+      commit('setActivePageName',e.currentTarget.getAttribute('data-icon-text'))
+    }
   },
   modules: {
   }
