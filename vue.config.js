@@ -1,5 +1,6 @@
 module.exports = {
-    publicPath: "./",
-    assetsDir: "",
-    outputDir: "docs"
-  }
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/dsui/'
+    : '/',
+  outputDir: 'docs',
+}
