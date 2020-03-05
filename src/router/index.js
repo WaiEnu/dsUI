@@ -15,9 +15,9 @@ const routes = [
     component: () => import('../views/Form.vue')
   },
   {
-    path: '/graph',
-    name: 'Graph',
-    component: () => import('../views/Graph.vue')
+    path: '/letter',
+    name: 'Letter',
+    component: () => import('../views/Letter.vue')
   },
 ]
 
