@@ -30,14 +30,20 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    setLength(state,payload) {
+      state.length = payload
+    },
     setActivePageName(state,payload) {
       state.activePageName = payload
-    }
+    },
   },
   actions: {
+    setLength({ commit },value) {
+      commit('setLength',value)
+    },
     setActivePageName({ commit },e) {
       commit('setActivePageName',e.currentTarget.getAttribute('data-icon-text'))
-    }
+    },
   },
   modules: {
   }
