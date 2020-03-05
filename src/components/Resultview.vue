@@ -13,6 +13,9 @@
         </li>
       </ul>
       <div class="contents" v-if="activePageName == 'origin'">
+        <div id="graph_origin">
+          ## graph_o ##
+        </div>
         <div id="table_origin">
           ## table_o ## 
         </div>
@@ -21,6 +24,9 @@
         </div>
       </div>
       <div class="contents" v-else-if="activePageName == 'mutate'">
+        <div id="graph_mutate">
+          ## graph_m ##
+        </div>
         <div id="table_mutate">
           ## table_m ##
         </div>
@@ -35,6 +41,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import { mapActions } from 'vuex'
+
 export default {
   name: 'Resultview',
   computed: mapGetters(['icons','activePageName']),

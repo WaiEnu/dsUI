@@ -19,12 +19,15 @@ export default new Vuex.Store({
     ],
   },
   getters: {
+    length(state){
+      return state.length
+    },
     activePageName(state){
       return state.activePageName
     },
     icons(state){
       return state.icons
-    }
+    },
   },
   mutations: {
     setActivePageName(state,payload) {

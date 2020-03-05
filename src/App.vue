@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Top</router-link> |
       <router-link to="/form">Caliculation</router-link> |
-      <router-link to="/result">Data</router-link>
+      <router-link to="/graph">Data</router-link>
     </div>
     <router-view/>
   </div>

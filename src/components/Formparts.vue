@@ -21,11 +21,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'Formparts',
   data: function(){
     return {
-      align: this.$store.state.length,
+      align: mapGetters(['length']),
     }
   },
 }

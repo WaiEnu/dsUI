@@ -1,17 +1,17 @@
 <template>
   <div class="result">
-    <Resultview/>
+    <Graphparts/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Resultview from '@/components/Resultview.vue'
+import Graphparts from '@/components/Graphparts.vue'
 
 export default {
-  name: 'Result',
+  name: 'Graph',
   components: {
-    Resultview
+    Graphparts,
   }
 }
 </script>

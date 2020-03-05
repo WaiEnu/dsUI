@@ -1,12 +1,6 @@
 <template>
   <div class="graphparts">
     <div class="contents">
-      <div id="graph_origin">
-        ## graph_o ##
-      </div>
-      <div id="graph_mutate">
-        ## graph_m ##
-      </div>
     </div>
   </div>
 </template>
