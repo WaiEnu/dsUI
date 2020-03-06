@@ -1,6 +1,4 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/dsui/'
-    : '/',
+  publicPath: process.env.NODE_ENV === 'production'  ? '/dsui/'  : '/',
   outputDir: 'docs',
 }

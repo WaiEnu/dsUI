@@ -2,45 +2,67 @@
   <div class="graphparts">
     <div class="contents">
       <div>
-        <button @click="onShuffleClick">shuffle</button>
-        <button @click="onAddButtonClick">add</button>
-        <br>
         <ul class="list">
           <transition-group name="flip">
-            <template v-for="item in $data.list">
-              <li :key="item" class="item">
-                <div class="item__text">{{ item }}</div>
-                <div class="item__delete" @click="onDeleteClick(item)"></div>
+            <template v-for="item in letter(align)">
+              <li :key="item.id" class="item" :id="item.id">
+                <div class="item__text">{{ item.text }}</div>
               </li>
             </template>
           </transition-group>
         </ul>
+        <div><button>ロボット</button>
+        <button>伝票</button></div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import l_ from 'lodash'
+// import l_ from 'lodash'
 export default {
   name: 'Letterparts',
   data() {
     return {
-      list: [1, 2, 3, 4, 5],
+      dna: ['A','G','C','T'],
+      stt: 'TAC',
+      stps: ['ATT','ATC','ACT'],
+      list: 3,
+      GC: 0.50,
     }
   },
+  computed: {
+    align(){
+      return this.$data.stt + makeDNA(this.$data.list*3,this.$data.GC) + this.$data.stps[Math.floor(this.$data.stps.length * Math.random())]
+    } 
+  },
   methods: {
-    onShuffleClick() {
-      this.$data.list = l_.shuffle(this.$data.list);
-    },
-    onAddButtonClick() {
-      const value = Math.max(...this.$data.list) + 1;
-      const index = Math.floor(this.$data.list.length * Math.random());
-      this.$data.list.splice(index, 0, value);
-    },
-    onDeleteClick(item) {
-      const index = this.$data.list.indexOf(item);
-      this.$data.list.splice(index, 1);
+    letter(str){
+      const letters=str.split('');
+      let newseq=[]
+      for (var i = 0; i < letters.length; i++) {
+        newseq.push( {'id':'id_'+i,'text':letters[i]});
+      }
+      return newseq
     }
   }
+}
+function makeDNA(size,GC) {
+	var newseq="";
+	var letter="";
+	for (var i = 0; i < size; i++) {
+    if (rnd() < GC) {
+      letter=(rnd()<0.5) ? "C" : "G";
+    } else {
+      letter=(rnd()<0.5) ? "T" : "A";
+    }
+    newseq+=letter;
+	}
+	return newseq;
+}
+rnd.today=new Date();
+rnd.seed=rnd.today.getTime();
+function rnd() {
+  rnd.seed = (rnd.seed*9301+49297) % 233280;
+  return rnd.seed/(233280.0);
 }
 </script>
