@@ -102,7 +102,6 @@ input[type="submit"]{
   padding: 10px;
   box-sizing: border-box;
 }
-
 @media screen and (max-width: 455px) {
   form,
   .fieldset{
@@ -114,16 +113,25 @@ input[type="submit"]{
   }
 }
 
+.contents.vs {
+  display: inline-block;
+}
+.vs-button{
+  margin: 16px 0 0;
+}
+.vs-button button{
+  margin: 0 4px;
+}
 .list {
+  text-align: left;
   position: relative;
-  margin: 16px 0;
+  margin: 16px 0 0;
   padding: 0;
 }
-
 .item {
   position: relative;
   display: inline-block;
-  padding: 8px 8px;
+  padding: 8px 16px 8px 4px;
   transition: all 0.5s;
 }
 .item__delete {
@@ -148,7 +156,6 @@ input[type="submit"]{
 .item__delete::after {
   transform: translate3d(-50%, -50%, 0) rotate(135deg);
 }
-
 .flip-enter-active {
   opacity: 0;
   transform: translate3d(0, -30px, 0);
