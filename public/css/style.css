@@ -134,6 +134,35 @@ input[type="submit"]{
   padding: 8px 16px 8px 4px;
   transition: all 0.5s;
 }
+.item__ {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+.item__add {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+.item__add::before, .item__add::after {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 50%;
+  height: 2px;
+  background-color: rgb(83, 141, 228);
+  content: '';
+}
+.item__add::before {
+  transform: translate3d(-50%, -50%, 0) rotate(90deg);
+}
+.item__add::after {
+  transform: translate3d(-50%, -50%, 0) rotate(185deg);
+}
 .item__delete {
   position: absolute;
   top: 0;
@@ -145,9 +174,9 @@ input[type="submit"]{
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 70%;
+  width: 50%;
   height: 2px;
-  background-color: #ccc;
+  background-color: rgb(238, 90, 90);
   content: '';
 }
 .item__delete::before {

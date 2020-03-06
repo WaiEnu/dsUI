@@ -8,6 +8,7 @@
               <li :key="item.id" class="item" :id="item.id">
                 <div class="item__text">{{ item.text }}</div>
                 <div class="item__delete" @click="onDeleteClick(item.id)"></div>
+                <div class="item__add"></div>
               </li>
             </template>
           </transition-group>
@@ -19,7 +20,7 @@
             <template v-for="item in letter">
               <li :key="item.id" class="item" :id="item.id">
                 <div class="item__text">{{ item.text }}</div>
-                <div class="item__delete"></div>
+                <div class="item__"></div>
               </li>
             </template>
           </transition-group>
