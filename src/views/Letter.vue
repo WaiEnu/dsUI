@@ -1,7 +1,22 @@
 <template>
-  <div class="letter">
-    <Letterparts/>
-  </div>
+  <v-container
+    class="fill-height"
+    fluid
+  >
+    <v-layout wrap align-center justify-space-around>
+      <v-flex lg8 md8 xs8>
+        <v-card>
+          <v-img
+            :src="item"
+            contain
+            alt=""
+            class="bgImg">
+            <Letterparts/>
+          </v-img>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -12,6 +27,11 @@ export default {
   name: 'Letter',
   components: {
     Letterparts,
-  }
+  },
+  data: function(){
+      return {
+        item:  require('@/assets/letter/caset.png')
+      }
+  },
 }
 </script>

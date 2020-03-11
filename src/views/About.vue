@@ -4,27 +4,34 @@
     fluid
   >
     <v-layout wrap align-center justify-space-around>
-      <v-flex lg6 md8 xs8>
+      <v-flex lg8 md8 xs8>
         <v-card>
-          <v-img :src="item"
+          <v-img
+            :src="item"
             contain
-            alt="" class="bgImg">
+            alt=""
+            class="bgImg">
+            <Aboutview/>
           </v-img>
         </v-card>
       </v-flex>
     </v-layout>
-  </v-container>
+  </v-container>           
 </template>
 
 <script>
 // @ is an alias to /src
+import Aboutview from '@/components/Aboutview.vue'
 
 export default {
-  name: 'Top',
+  name: 'About',
+  components: {
+    Aboutview,
+  },
   data: function(){
       return {
-          item:  require('@/assets/common/topView.png')
+        item:  require('@/assets/about/pagecnt.png')
       }
-  }
+  },
 }
 </script>
