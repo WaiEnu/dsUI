@@ -40,3 +40,9 @@
 ../assets/letter/row.png
 ../assets/letter/tape_ico.png
 ../assets/letter/tran_ico.png
+
+section {
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}

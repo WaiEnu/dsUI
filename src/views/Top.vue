@@ -4,11 +4,11 @@
     fluid
   >
     <v-layout wrap align-center justify-space-around>
-      <v-flex lg6 md8 xs8>
+      <v-flex lg8 md10 xs10>
         <v-card>
           <v-img :src="item"
             contain
-            alt="" class="bgImg">
+            alt="" class="Img">
           </v-img>
         </v-card>
       </v-flex>

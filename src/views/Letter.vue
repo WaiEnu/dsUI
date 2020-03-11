@@ -4,12 +4,12 @@
     fluid
   >
     <v-layout wrap align-center justify-space-around>
-      <v-flex lg8 md8 xs8>
+      <v-flex lg8 md10 xs10>
         <v-card>
           <v-img
             :src="item"
-            contain
             alt=""
+            position="left top"
             class="bgImg">
             <Letterparts/>
           </v-img>

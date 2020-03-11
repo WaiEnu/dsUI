@@ -9,7 +9,7 @@
         :src="require('@/assets/letter/copy_ico.png')"
         contain
         alt=""
-        class="bgImg">
+        class="Img">
       </v-img>
       </v-col>
       <v-col cols="10">
@@ -32,7 +32,7 @@
         :src="require('@/assets/letter/tape_ico.png')"
         contain
         alt=""
-        class="bgImg">
+        class="Img">
       </v-img>
       </v-col>
       <v-col cols="10">
@@ -53,7 +53,7 @@
         :src="require('@/assets/letter/tran_ico.png')"
         contain
         alt=""
-        class="bgImg">
+        class="Img">
       </v-img>
       </v-col>
       <v-col cols="10">
