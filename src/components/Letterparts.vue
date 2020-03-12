@@ -130,7 +130,7 @@ export default {
        this.$data.alX.splice(index, 1);
     },
     reset: function () {
-      this.$router.go({path: this.$router.currentRoute.path, force: true})
+      
     }
   }
 }
