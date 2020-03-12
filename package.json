@@ -8,8 +8,8 @@
     "lint": "vue-cli-service lint",
     "express": "vue-cli-service express:watch",
     "express:run": "vue-cli-service express:run",
-    "postinstall": "npm run build",
-    "start": "node app.js"
+    "postinstall": "npm install express connect-history-api-fallback",
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
