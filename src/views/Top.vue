@@ -4,7 +4,7 @@
     fluid
   >
     <v-layout wrap align-center justify-space-around>
-      <v-flex lg8 md10 xs10>
+      <v-flex lg8 md8 xs12>
         <v-card>
           <v-img :src="item"
             contain
