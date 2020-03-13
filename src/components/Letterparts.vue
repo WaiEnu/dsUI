@@ -94,7 +94,6 @@ export default {
       rna: ['U','C','A','G'],
       stt: [2,0,3],
       stps: [[1,3,3],[1,3,4],[0,3,2]], 
-      list: 3, 
     }
   },
   computed: {
@@ -130,7 +129,7 @@ export default {
        this.$data.alX.splice(index, 1);
     },
     reset: function () {
-      
+      this.$router.go({path: this.$router.currentRoute.path, force: true})
     }
   }
 }
