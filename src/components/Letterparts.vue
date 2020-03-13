@@ -1,82 +1,82 @@
 <template>
   <v-container
-    class="fill-height"
+    class="fill-height pa-5"
     fluid
   >
-    <v-row>
+    <v-row no-gutters="" class="pa-2">
       <v-col cols="2">
-      <v-img
-        :src="require('@/assets/letter/copy_ico.png')"
-        contain
-        alt=""
+        <v-img
+          :src="require('@/assets/about/tape.png')"
+          contain
+          alt=""
+          class="Img">
+        </v-img>
+      </v-col>
+      <v-col cols="10">
+        <ul class="list p-0">
+          <transition-group name="flip">
+            <template v-for="item in letterX">
+              <li :key="item.id" class="item" :id="item.id">
+                <div class="item__text">{{ item.text }}</div>
+                <div class="item__delete" @click="onDeleteClick(item.id)"></div>
+                <div class="item__add"></div>
+              </li>
+            </template>
+          </transition-group>
+        </ul>
+      </v-col>
+    </v-row>
+    <v-row no-gutters="" class="pa-2">
+      <v-col cols="2">
+        <v-img
+          :src="require('@/assets/about/copy.png')"
+          contain
+          alt=""
+          class="Img">
+      </v-img>
+      </v-col>
+      <v-col cols="10">
+        <ul class="list p-0">
+          <transition-group name="flip">
+            <template v-for="item in copyX">
+              <li :key="item.id" class="item" :id="item.id">
+                <div class="item__text">{{ item.text }}</div>
+              </li>
+            </template>
+          </transition-group>
+        </ul>
+      </v-col>
+    </v-row>
+    <v-row no-gutters="" class="pa-2">
+      <v-col cols="2">
+        <v-img
+          :src="require('@/assets/about/transfar.png')"
+          contain
+          alt=""
         class="Img">
       </v-img>
       </v-col>
       <v-col cols="10">
-      <ul class="list">
-        <transition-group name="flip">
-          <template v-for="item in letterX">
-            <li :key="item.id" class="item" :id="item.id">
-              <div class="item__text">{{ item.text }}</div>
-              <div class="item__delete" @click="onDeleteClick(item.id)"></div>
-              <div class="item__add"></div>
-            </li>
-          </template>
-        </transition-group>
-      </ul>
+        <ul class="list p-0">
+          <transition-group name="flip">
+            <template v-for="item in letter">
+              <li :key="item.id" class="item" :id="item.id">
+                <div class="item__text">{{ item.text }}</div>
+                <div class="item__"></div>
+              </li>
+            </template>
+          </transition-group>
+        </ul>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col cols="2">
-      <v-img
-        :src="require('@/assets/letter/tape_ico.png')"
-        contain
-        alt=""
-        class="Img">
-      </v-img>
-      </v-col>
-      <v-col cols="10">
-      <ul class="list">
-        <transition-group name="flip">
-          <template v-for="item in copyX">
-            <li :key="item.id" class="item" :id="item.id">
-              <div class="item__text">{{ item.text }}</div>
-            </li>
-          </template>
-        </transition-group>
-      </ul>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="2">
-      <v-img
-        :src="require('@/assets/letter/tran_ico.png')"
-        contain
-        alt=""
-        class="Img">
-      </v-img>
-      </v-col>
-      <v-col cols="10">
-      <ul class="list">
-        <transition-group name="flip">
-          <template v-for="item in letter">
-            <li :key="item.id" class="item" :id="item.id">
-              <div class="item__text">{{ item.text }}</div>
-              <div class="item__"></div>
-            </li>
-          </template>
-        </transition-group>
-      </ul>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="4">
+    <v-row no-gutters="">
+      <v-col cols="4" class="text-center pa-2">
         <v-btn>ロボット</v-btn>
       </v-col>
-      <v-col cols="4">
+      <v-col cols="4" class="text-center pa-2">
         <v-btn>伝票</v-btn>
       </v-col>
-      <v-col cols="4">
+      <v-col cols="4" class="text-center pa-2">
         <v-btn @click="reset()">リセット</v-btn>
       </v-col>
     </v-row>
