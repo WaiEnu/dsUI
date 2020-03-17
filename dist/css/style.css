@@ -37,19 +37,30 @@ a {
   display: inline-block;
 }
 
+.dialog{
+  position: absolute!important;
+  top: 0;
+}
+
 .item {
   position: relative;
   display: inline-block;
-  padding: 8px 16px 8px 4px;
+  padding: 0;
   transition: all 0.5s;
 }
-.item__ {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px;
-  height: 20px;
+.item__text.trna {
+  padding: 24px 16px 0px 16px;
 }
+
+.item__text.dna,
+.item__text.rna {
+  padding: 24px 16px;
+}
+
+.item__text.rna {
+  cursor: pointer;
+}
+
 .item__add {
   position: absolute;
   bottom: 0;

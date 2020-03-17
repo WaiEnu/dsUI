@@ -70,13 +70,4 @@ export default {
     }
   },
 }
-/***
-../assets/about/ATCG.png
-../assets/about/next.png
-../assets/about/pagecnt.png
-..
-
-
-../assets/about/UACG.png
- */
 </script>
