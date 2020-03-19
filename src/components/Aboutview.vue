@@ -63,9 +63,9 @@ export default {
   data () {
     return {
       slides: [
-        {'id':1,'title':'First Slide','text':'this is First','src':require('@/assets/about/tape.png')}
-        ,{'id':2,'title':'Second Slide','text':'this is Second','src':require('@/assets/about/copy.png')}
-        ,{'id':3,'title':'Third Slide','text':'this is Third','src':require('@/assets/about/transfar.png')}
+        {'id':1,'title':'DNA','text':'細胞の核という部分の中には遺伝子があります','src':require('@/assets/about/tape.png')}
+        ,{'id':2,'title':'設計図','text':'遺伝子は生命の設計図のようなものです','src':require('@/assets/about/copy.png')}
+        ,{'id':3,'title':'暗号','text':'遺伝子は四つの記号であらわされ、その三つの組み合わせで一つの暗号をコードします','src':require('@/assets/about/transfar.png')}
       ],
     }
   },

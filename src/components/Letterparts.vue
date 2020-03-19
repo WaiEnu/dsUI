@@ -19,7 +19,7 @@
           <transition-group name="flip">
             <template v-for="item in letterX">
               <li :key="item.id" class="item" :id="item.id">
-                <div class="item__text dna" :class="getDna(item.text)"></div>
+                <div class="item__text dna" :class="item.text"></div>
               </li>
             </template>
           </transition-group>
@@ -42,7 +42,7 @@
           <transition-group name="flip">
             <template v-for="item in copyX">
               <li :key="item.id" class="item" :id="item.id">
-                <div class="item__text rna" :class="getRna(item.text)" @click="onIndexClick(item.id)"></div>
+                <div class="item__text rna" :class="item.text" @click="onIndexClick(item.id)"></div>
               </li>
             </template>
           </transition-group>
@@ -65,7 +65,7 @@
           <transition-group name="flip">
             <template v-for="item in codonX">
               <li :key="item.id" class="item" :id="item.id">
-                <div class="item__text trna">{{ item.text }}</div>
+                <div class="item__text trna" :class="item.class">{{ item.text }}</div>
               </li>
             </template>
           </transition-group>
@@ -115,6 +115,8 @@
 // import l_ from 'lodash'
   import LetterpartsTable from "@/components/LetterpartsTable.vue";
   import LetterpartsDialog from "@/components/LetterpartsDialog.vue";
+  import { mapActions } from 'vuex'
+
   export default {
   name: 'Letterparts',
   components: {
@@ -123,77 +125,35 @@
   },
   data() {
     return {
-      ali: [[2,0,3,0,3,3,0,1,3,3,0,2,0,3,2]],
-      alX: [[2,0,3,0,3,3,0,1,3,3,0,3,0,2,2,2,3]],
-      rnk: 0,
-      index:100000,
-      dna: ['A','G','T','C'],
-      rna: ['U','C','A','G'],
-      cdn:[[['F','F','L','L'],['S','S','S','S'],['Y','Y','x','x'],['C','C','x','W']],[['L','L','L','L'],['P','P','P','P'],['H','H','Q','Q'],['R','R','R','R']],[['I','I','I','M'],['T','T','T','T'],['N','N','K','K'],['S','S','R','R']],[['V','V','V','V'],['A','A','A','A'],['D','D','E','E'],['G','G','G','G']]],
+
     }
   },
   computed: {
-    alignX: function (){
-      return this.$data.alX[this.$data.rnk]
-    },
     letterX: function (){
-      return this.Seq(this.alignX)
+      return this.$store.getters['DnaSeq']
     },
     copyX: function (){
-      return this.Seq(this.alignX)
+      return this.$store.getters['RnaSeq']
     },
     codonX: function (){
-      return this.makecodon(this.$data.index)
+      return this.$store.getters['makecodon']
     },
     isRobot: function () {
-      return this.Robot();
+      return this.Robot()
     },
   },
   methods: {
-    Seq: function (letters) {
-      let newseq=[]
-      for (var i = 0; i < letters.length; i++) {
-        const num=letters[i]
-        newseq.push( {'id':i,'text':num});
-      }
-      return newseq
-    },
-    getDna: function (l) {
-      return this.$data.dna[l]
-    },
-    getRna: function (l) {
-      return this.$data.rna[l]
-    },
-    getAmino: function (l,m,n) {
-      return this.$data.cdn[l][m][n]
-    },
     Robot: function () {
-      let letters=this.makecodon(this.$data.index);
+      let letters = this.$store.getters['makecodon'];
       let flg=false;
       if(letters.length>1){
         flg = (letters[0].text === "M" &&  letters[letters.length-1].text === "x");
       }
       return flg;
     },
-    makecodon: function (s){
-      let letters = this.alignX;
-      const n = 2;
-      let codon = [];
-      let i = 1;
-      let d = s + n;
-      // if((s<letters.length-2) && (this.getAmino(letters[s],letters[s+1],letters[s+2])=="M")){
-        while(d < letters.length){
-          let val=this.getAmino(letters[d-n],letters[d-n+1],letters[d-n+2]);
-          codon.push({'id':i,'text':val});
-          if(val=="x"){break;}
-          d += 3;
-          i ++;
-        }
-      // }
-      return codon;
-    },
-    onIndexClick: function (item) {
-      this.$data.index=item;
+    ...mapActions(['changeIndex']),
+    onIndexClick: function (id) {
+        this.changeIndex(id)
     },
     showTable: function () {
       this.$refs.table.open();
@@ -202,11 +162,11 @@
       this.$refs.dialog.open();
     },
     next: function () {
-      if(this.$data.rnk+1<this.$data.ali.length){
-        this.$data.rnk++
-      }else{
-        this.$router.go({path: this.$router.currentRoute.path, force: true})
-      }
+      // if(this.$data.rnk+1<this.$data.ali.length){
+      //   //データ再取得
+      // }else{
+      this.$router.go({path: this.$router.currentRoute.path, force: true})
+      // }
     },
     reset: function () {
       this.$router.go({path: this.$router.currentRoute.path, force: true})

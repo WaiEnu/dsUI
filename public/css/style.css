@@ -60,6 +60,10 @@ a {
 .item__text.rna {
   cursor: pointer;
 }
+.item__text.trna.r {
+  color:red;
+  font-weight: bold;
+}
 
 .item__add {
   position: absolute;

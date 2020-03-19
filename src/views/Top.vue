@@ -22,9 +22,9 @@
 export default {
   name: 'Top',
   data: function(){
-      return {
-          item:  require('@/assets/common/topView.png')
-      }
-  }
+    return {
+      item:  require('@/assets/common/topView.png')
+    }
+  },
 }
 </script>
