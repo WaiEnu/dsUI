@@ -1,7 +1,8 @@
 <template>
+  <!-- <v-dialog v-model="table" width="60vw" max-width="500"> -->
   <v-dialog v-model="table" width="60vw" max-width="500">
     <v-card>
-      <v-card-title class="headline grey lighten-2" primary-title>
+      <!-- <v-card-title class="headline grey lighten-2" primary-title>
         暗号表
       </v-card-title>
       <v-card-text class="px-2 py-0">
@@ -62,7 +63,56 @@
             </tr>
           </tbody>
         </v-simple-table>
-      </v-card-text>
+      </v-card-text> -->
+    <v-img
+      :src="item"
+      position="left top"
+      alt=""
+      class="bgImg">
+      <v-card-text>
+      <v-container
+        class="pa-0"
+        fluid>
+        <v-row no-gutters="">
+          <v-col cols="12" class="pa-2">
+            <div class="display-1">
+            </div>
+          </v-col>
+        </v-row>
+        <v-row no-gutters="">
+          <v-col cols="4" class="text-center pa-2">
+            <v-img
+              :src="result[0].src"
+              contain
+              alt=""
+              width="auto"
+              height="20vmin" 
+              class="Img">
+            </v-img>
+          </v-col>
+          <v-col cols="8" class="pa-2">
+            <div class="display-1">
+            </div>
+          </v-col>
+        </v-row>
+        <v-row no-gutters="">
+          <v-col cols="4" class="text-center pa-2">
+            <v-img
+              :src="result[1].src"
+              contain
+              alt=""
+              width="auto"
+              height="20vmin" 
+              class="Img">
+            </v-img>
+          </v-col>
+          <v-col cols="8" class="pa-2">
+            <div class="display-1">
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+      </v-card-text> 
 
       <v-divider></v-divider>
 
@@ -74,15 +124,22 @@
           OK
         </v-btn>
       </v-card-actions>
+    </v-img>
     </v-card>
   </v-dialog>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
-      table: false
+      table: false,
+      item:  require('@/assets/about/pagecnt.png'),
+      result: [
+        {'id':1,'src':require('@/assets/data/Robot.png')}
+        ,{'id':2,'src':require('@/assets/data/roboNGpng.png')}
+      ],
     };
   },
   methods: {

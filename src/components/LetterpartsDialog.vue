@@ -5,7 +5,12 @@
         <span v-if="success">せいこう！</span>
         <span v-else>しっぱい…</span>
       </v-card-title>
-      <v-card-text class="px-2 py-0 justify-center" v-if="success">
+      <v-img
+        :src="item"
+        position="left top"
+        alt=""
+        class="bgImg">
+        <v-card-text class="px-2 py-0 justify-center" v-if="success">
           <v-img
             :src="result[0].src"
             contain
@@ -14,8 +19,8 @@
             height="40vmin" 
             class="">
           </v-img>
-      </v-card-text>
-      <v-card-text class="px-2 py-0 justify-center" v-else>
+        </v-card-text>
+        <v-card-text class="px-2 py-0 justify-center" v-else>
           <v-img
             :src="result[1].src"
             contain
@@ -24,25 +29,26 @@
             height="40vmin" 
             class="">
           </v-img>
-      </v-card-text>
+        </v-card-text>
 
-      <v-divider></v-divider>
+        <v-divider></v-divider>
 
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn
-          v-if="success"
-          color="primary"
-          @click="goesNext()">
-          OK
-        </v-btn>
-        <v-btn
-          v-else
-          color="primary"
-          @click="close()">
-          もう一回
-        </v-btn>
-      </v-card-actions>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            v-if="success"
+            color="primary"
+            @click="goesNext()">
+            OK
+          </v-btn>
+          <v-btn
+            v-else
+            color="primary"
+            @click="close()">
+            もう一回
+          </v-btn>
+        </v-card-actions>
+      </v-img>
     </v-card>
   </v-dialog>
 </template>
@@ -53,6 +59,7 @@ export default {
   data() {
     return {
       dialog: false,
+      item:  require('@/assets/about/pagecnt.png'),
       result: [
         {'id':1,'src':require('@/assets/data/Robot.png')}
         ,{'id':2,'src':require('@/assets/data/roboNGpng.png')}
@@ -70,7 +77,7 @@ export default {
     },
     goesNext: function () {
       this.dialog = false;
-      //this.$emit('call-next')
+      this.$emit('call-next')
     },
   }
 }

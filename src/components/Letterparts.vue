@@ -85,10 +85,6 @@
         <v-btn @click="reset()">リセット</v-btn>
       </v-col>
     </v-row>
-    <template>
-      <div>
-      </div>
-    </template>
   </v-container>
 </template>
 <style lang="scss">

@@ -6,10 +6,7 @@
     <v-layout wrap align-center justify-space-around>
       <v-flex lg8 md8 xs10>
         <v-card class="mt-4">
-          <v-img :src="item"
-            contain
-            alt="" class="Img">
-          </v-img>
+          <CodonSlot/>
         </v-card>
       </v-flex>
     </v-layout>
@@ -18,12 +15,16 @@
 
 <script>
 // @ is an alias to /src
+import CodonSlot from '@/components/CodonSlot.vue'
 
 export default {
   name: 'Top',
+  components: {
+    CodonSlot,
+  },
   data: function(){
     return {
-      item:  require('@/assets/common/topView.png')
+      //item:  require('@/assets/common/topView.png')
     }
   },
 }
