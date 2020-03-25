@@ -31,7 +31,7 @@
     </v-row>
   </v-card-text>
   <v-divider></v-divider>
-  <v-card-actions class="text-center">
+  <v-card-actions v-if="completed()" class="text-center">
     <v-btn
       color="primary"
       @click="reset()">
