@@ -11,10 +11,11 @@
         cover
       ></v-img>
     </template>
-    <v-tabs align-with-title
+    <v-tabs 
+        grow
         v-for="item in items"
         :key="item.title">
-      <v-tab centered :to=item.link >{{ item.title }}</v-tab>
+      <v-tab class="mx-0" :to=item.link >{{ item.title }}</v-tab>
     </v-tabs>
   </v-app-bar>
 </template>
