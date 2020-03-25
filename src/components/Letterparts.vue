@@ -74,15 +74,15 @@
     </v-row>
     <v-row no-gutters="">
       <v-col cols="4" class="text-center pa-2">
-        <v-btn @click="showDialog()">ロボット</v-btn>
+        <v-btn class="lbtn" depressed text color="gray" @click="showDialog()">ロボット</v-btn>
         <app-dialog :success="isRobot" v-on:call-next="next" ref="dialog"></app-dialog>
       </v-col>
       <v-col cols="4" class="text-center pa-2">
-        <v-btn @click="showTable()">ヒント</v-btn>
+        <v-btn class="lbtn" depressed text color="gray" @click="showTable()">ヒント</v-btn>
         <app-table ref="table"></app-table>
       </v-col>
       <v-col cols="4" class="text-center pa-2">
-        <v-btn @click="reset()">リセット</v-btn>
+        <v-btn class="lbtn" depressed text color="gray" @click="reset()">リセット</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -105,6 +105,10 @@
 .trna{
 	background-size: 100% 100%;
   background-image:url('../assets/data/tRNA.png');
+}
+.lbtn{
+	background-size: 100% 100%;
+  background-image:url('../assets/letter/button.png');
 }
 </style>
 <script>
@@ -147,7 +151,7 @@
       }
       return flg;
     },
-    ...mapActions(['changeIndex']),
+    ...mapActions(['changeIndex','makeAlx']),
     onIndexClick: function (id) {
         this.changeIndex(id)
     },
@@ -161,11 +165,12 @@
       // if(this.$data.rnk+1<this.$data.ali.length){
       //   //データ再取得
       // }else{
-      this.$router.go({path: this.$router.currentRoute.path, force: true})
+        this.changeIndex(-1)
+        this.makeAlx()
       // }
     },
     reset: function () {
-      this.$router.go({path: this.$router.currentRoute.path, force: true})
+        this.changeIndex(-1)
     },
   }
 }

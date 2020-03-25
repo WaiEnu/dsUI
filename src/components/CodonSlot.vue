@@ -1,6 +1,6 @@
 <template>
-<div>
-  <div>
+<v-card class="mt-4">
+  <v-card-text>
     <v-row no-gutters="">
       <v-col
         cols="4"
@@ -33,12 +33,16 @@
       </v-col>
     </v-row>
     </transition>
-  </div>
-  <div>
-  </div>
-  <div>
-  </div>
-</div>
+  </v-card-text>
+  <v-divider></v-divider>
+  <v-card-actions class="text-center">
+    <v-btn
+      color="primary"
+      @click="reset()">
+      もう一回
+    </v-btn>
+  </v-card-actions>
+</v-card>
 </template>
 
 <script>
@@ -70,6 +74,9 @@ export default {
         c = this.$data.cdn[l][m][n];
       }
       return  c;
+    },
+    reset: function(){
+      this.$data.selections= []
     }
   }
 }

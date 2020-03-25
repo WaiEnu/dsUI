@@ -1,15 +1,15 @@
 <template>
   <v-dialog v-model="dialog" width="60vw" height="60vmin" max-width="500" max-height="500">
     <v-card>
-      <v-card-title class="headline grey lighten-2" primary-title>
-        <span v-if="success">せいこう！</span>
-        <span v-else>しっぱい…</span>
-      </v-card-title>
       <v-img
         :src="item"
         position="left top"
         alt=""
         class="bgImg">
+        <v-card-title class="headline transparent lighten-2" primary-title>
+          <span v-if="success">せいこう！</span>
+          <span v-else>しっぱい…</span>
+        </v-card-title>
         <v-card-text class="px-2 py-0 justify-center" v-if="success">
           <v-img
             :src="result[0].src"
