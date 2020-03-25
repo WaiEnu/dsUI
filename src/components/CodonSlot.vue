@@ -14,7 +14,6 @@
           outlined></v-select>
       </v-col>
     </v-row>
-    <transition name="flip">
     <v-row no-gutters="" v-if="completed()">
       <v-col
         cols="4"
@@ -24,15 +23,12 @@
         <div class="selectedT pa-4">{{getRNA(chosen)}}</div>
       </v-col>
     </v-row>
-    </transition>
-    <transition name="flip">
     <v-row no-gutters="" v-if="completed()">
       <v-col cols="12"
         class="text-center pa-2 mx-auto">
         <div class="selectedT pa-4">{{getCodon(selections)}}</div>
       </v-col>
     </v-row>
-    </transition>
   </v-card-text>
   <v-divider></v-divider>
   <v-card-actions class="text-center">
