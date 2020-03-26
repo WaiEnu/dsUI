@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.5b60b198e54380a21da01534ada1c22a.js"
+  "/precache-manifest.0a697d744e6036db7bd74f60ffb74c04.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "troublecentral"});
