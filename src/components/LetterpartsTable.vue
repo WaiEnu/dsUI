@@ -15,13 +15,8 @@
           class="pa-0"
           fluid>
           <v-row no-gutters="">
-            <v-col cols="4" class="pa-2">
-              <div class="display-1">
-              </div>
-            </v-col>
-            <v-col cols="8" class="pa-2">
-              <div class="display-1">
-              </div>
+            <v-col cols="12" class="pa-2">
+              <p>遺伝暗号は始まりの合図AUGから始まり、終わりの合図(UAA,UAC,UCA)でおわる。</p>
             </v-col>
           </v-row>
           <v-row no-gutters="">

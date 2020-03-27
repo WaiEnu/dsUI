@@ -5,15 +5,7 @@
   >
     <v-layout wrap align-center justify-space-around>
       <v-flex lg8 md8 xs10>
-        <v-card class="mt-4">
-          <v-img
-            :src="item"
-            alt=""
-            position="left top"
-            class="bgImg">
-            <Letterparts/>
-          </v-img>
-        </v-card>
+        <Letterparts/>
       </v-flex>
     </v-layout>
   </v-container>
@@ -30,7 +22,6 @@ export default {
   },
   data: function(){
       return {
-        item:  require('@/assets/letter/caset.png')
       }
   },
 }

@@ -1,45 +1,50 @@
 <template>
-<v-carousel
-  height="100%"
-  hide-delimiter-background
-  show-arrows-on-hover
->
-  <v-carousel-item
-    v-for="slide in slides"
-    :key="slide.id"
-  >
-    <v-sheet
-      light=""
-      color="transparent"
-    >
-      <v-container
-        class="fill-height">
-        <v-row>
-          <v-col cols="12">
-            <div class="display-3 slideH">
-              {{ slide.title }}
-            </div>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="4">
-          <v-img
-            :src="slide.src"
-            contain
-            alt=""
-            class="bgImg">
-          </v-img>
-          </v-col>
-          <v-col cols="8">
-            <div class="display-1">
-              {{ slide.text }}
-            </div>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
-  </v-carousel-item>
-</v-carousel>
+<v-card class="mt-4">
+  <v-img
+    :src="item"
+    position="left top"
+    alt=""
+    class="bgImg">
+    <v-carousel
+      height="100%"
+      hide-delimiter-background
+      show-arrows-on-hover>
+      <v-carousel-item
+        v-for="slide in slides"
+        :key="slide.id">
+        <v-sheet
+          light=""
+          color="transparent">
+          <v-container
+            class="fill-height">
+            <v-row>
+              <v-col cols="12">
+                <div class="display-3 slideH">
+                  {{ slide.title }}
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="4">
+              <v-img
+                :src="slide.src"
+                contain
+                alt=""
+                class="bgImg">
+              </v-img>
+              </v-col>
+              <v-col cols="8">
+                <div class="display-1">
+                  {{ slide.text }}
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-sheet>
+      </v-carousel-item>
+    </v-carousel>
+  </v-img>
+</v-card>
 </template>
 
 <style lang="scss">
@@ -62,6 +67,7 @@ export default {
   name: 'Aboutview',
   data () {
     return {
+      item: require('@/assets/about/pagecnt.png'),
       slides: [
         {'id':1,'title':'DNA','text':'細胞の核という部分の中には遺伝子があります','src':require('@/assets/about/tape.png')}
         ,{'id':2,'title':'設計図','text':'遺伝子は生命の設計図のようなものです','src':require('@/assets/about/copy.png')}

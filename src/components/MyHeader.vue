@@ -1,9 +1,8 @@
 <template>
   <v-app-bar
-    absolute
+    fixed
     color="transparent"
-    src="../assets/common/header2.png"
-  >
+    src="../assets/common/header2.png">
     <template v-slot:img="{ props }">
       <v-img
         v-bind="props"

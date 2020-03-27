@@ -5,7 +5,7 @@
   >
     <v-layout wrap align-center justify-space-around>
       <v-flex lg8 md8 xs10>
-          <CodonSlot/>
+        <CodonSlot/>
       </v-flex>
     </v-layout>
   </v-container>

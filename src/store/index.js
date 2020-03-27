@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     drawer: false,
     index: -1,
-    ali: [2,0,3,0,3,0,1,2,3,0,1,3,3,0,3,0,2,2],
     alX: [2,2,0,3,0,3,0,1,2,3,0,1,3,3,0,3,0,2,2,3],
     dna: ['A','G','T','C'],
     rna: ['U','C','A','G'],
@@ -16,9 +15,6 @@ export default new Vuex.Store({
   getters: {
     index: function (state){
       return state.index;
-    },
-    ali: function (state){
-      return state.ali;
     },
     alX: function (state){
       return state.alX;

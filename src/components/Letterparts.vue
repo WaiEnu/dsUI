@@ -1,91 +1,98 @@
 <template>
-  <v-container
-    class="fill-height pa-4"
-    fluid
-  >
-    <v-row no-gutters="">
-      <v-col cols="2">
-        <v-img
-          :src="require('@/assets/about/tape.png')"
-          width="80"
-          height="80"
-          contain
-          alt=""
-          class="mx-auto">
-        </v-img>
-      </v-col>
-      <v-col cols="10">
-        <ul class="list pl-0">
-          <transition-group name="flip">
-            <template v-for="item in letterX">
-              <li :key="item.id" class="item" :id="item.id">
-                <div class="item__text dna" :class="item.text"></div>
-              </li>
-            </template>
-          </transition-group>
-        </ul>
-      </v-col>
-    </v-row>
-    <v-row no-gutters="">
-      <v-col cols="2">
-        <v-img
-          :src="require('@/assets/about/copy.png')"
-          width="80"
-          height="80"
-          contain
-          alt=""
-          class="mx-auto">
-      </v-img>
-      </v-col>
-      <v-col cols="10">
-        <ul class="list pl-0">
-          <transition-group name="flip">
-            <template v-for="item in copyX">
-              <li :key="item.id" class="item" :id="item.id">
-                <div class="item__text rna" :class="item.text" @click="onIndexClick(item.id)"></div>
-              </li>
-            </template>
-          </transition-group>
-        </ul>
-      </v-col>
-    </v-row>
-    <v-row no-gutters="">
-      <v-col cols="2">
-        <v-img
-          :src="require('@/assets/about/transfar.png')"
-          width="60"
-          height="60"
-          contain
-          alt=""
-          class="mx-auto">
-      </v-img>
-      </v-col>
-      <v-col cols="10">
-        <ul class="list pl-0">
-          <transition-group name="flip">
-            <template v-for="item in codonX">
-              <li :key="item.id" class="item" :id="item.id">
-                <div class="item__text trna" :class="item.class">{{ item.text }}</div>
-              </li>
-            </template>
-          </transition-group>
-        </ul>
-      </v-col>
-    </v-row>
-    <v-row no-gutters="">
-      <v-col cols="4" class="text-center pa-2">
-        <v-btn class="lbtn" depressed text color="gray" @click="showDialog()">ロボット</v-btn>
-        <app-dialog :success="isRobot" v-on:call-next="next" ref="dialog"></app-dialog>
-      </v-col>
-      <v-col cols="4" class="text-center pa-2">
-        <v-btn class="lbtn" depressed text color="gray" @click="showTable()">ヒント</v-btn>
-        <app-table ref="table"></app-table>
-      </v-col>
-      <v-col cols="4" class="text-center pa-2">
-        <v-btn class="lbtn" depressed text color="gray" @click="reset()">リセット</v-btn>
-      </v-col>
-    </v-row>
-  </v-container>
+<v-card class="mt-4">
+  <v-img
+    :src="item"
+    alt=""
+    position="left top"
+    class="bgImg">
+    <v-container
+      class="fill-height pa-4"
+      fluid>
+      <v-row no-gutters="">
+        <v-col cols="2">
+          <v-img
+            :src="require('@/assets/about/tape.png')"
+            width="80"
+            height="80"
+            contain
+            alt=""
+            class="mx-auto">
+          </v-img>
+        </v-col>
+        <v-col cols="10">
+          <ul class="list pl-0">
+            <transition-group name="flip">
+              <template v-for="item in letterX">
+                <li :key="item.id" class="item" :id="item.id">
+                  <div class="item__text dna" :class="item.text"></div>
+                </li>
+              </template>
+            </transition-group>
+          </ul>
+        </v-col>
+      </v-row>
+      <v-row no-gutters="">
+        <v-col cols="2">
+          <v-img
+            :src="require('@/assets/about/copy.png')"
+            width="80"
+            height="80"
+            contain
+            alt=""
+            class="mx-auto">
+          </v-img>
+        </v-col>
+        <v-col cols="10">
+          <ul class="list pl-0">
+            <transition-group name="flip">
+              <template v-for="item in copyX">
+                <li :key="item.id" class="item" :id="item.id">
+                  <div class="item__text rna" :class="item.text" @click="onIndexClick(item.id)"></div>
+                </li>
+              </template>
+            </transition-group>
+          </ul>
+        </v-col>
+      </v-row>
+      <v-row no-gutters="">
+        <v-col cols="2">
+          <v-img
+            :src="require('@/assets/about/transfar.png')"
+            width="60"
+            height="60"
+            contain
+            alt=""
+            class="mx-auto">
+          </v-img>
+        </v-col>
+        <v-col cols="10">
+          <ul class="list pl-0">
+            <transition-group name="flip">
+              <template v-for="item in codonX">
+                <li :key="item.id" class="item" :id="item.id">
+                  <div class="item__text trna" :class="item.class">{{ item.text }}</div>
+                </li>
+              </template>
+            </transition-group>
+          </ul>
+        </v-col>
+      </v-row>
+      <v-row no-gutters="">
+        <v-col cols="4" class="text-center pa-2">
+          <v-btn class="lbtn" depressed text color="gray" @click="showDialog()">ロボット</v-btn>
+          <app-dialog :success="isRobot" v-on:call-next="next" ref="dialog"></app-dialog>
+        </v-col>
+        <v-col cols="4" class="text-center pa-2">
+          <v-btn class="lbtn" depressed text color="gray" @click="showTable()">ヒント</v-btn>
+          <app-table ref="table"></app-table>
+        </v-col>
+        <v-col cols="4" class="text-center pa-2">
+          <v-btn class="lbtn" depressed text color="gray" @click="reset()">リセット</v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-img>
+</v-card>
 </template>
 <style lang="scss">
 .dna{
@@ -125,7 +132,10 @@
   },
   data() {
     return {
-
+      item:  require('@/assets/letter/caset.png'),
+      dna: this.$store.getters['dna'],
+      rna: this.$store.getters['rna'],
+      cdn: this.$store.getters['cdn'],
     }
   },
   computed: {
@@ -162,15 +172,11 @@
       this.$refs.dialog.open();
     },
     next: function () {
-      // if(this.$data.rnk+1<this.$data.ali.length){
-      //   //データ再取得
-      // }else{
-        this.changeIndex(-1)
-        this.makeAlx()
-      // }
+      this.changeIndex(-1)
+      this.makeAlx()
     },
     reset: function () {
-        this.changeIndex(-1)
+      this.changeIndex(-1)
     },
   }
 }
