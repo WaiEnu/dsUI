@@ -1,4 +1,4 @@
-# dsui
+# periodic-table
 
 ## Project setup
 ```

@@ -3,10 +3,7 @@ module.exports = {
     "vuetify"
   ],
 
-  pluginOptions: {
-    express: {
-      shouldServeApp: true,
-      serverDir: './srv'
-    }
-  }
+  outputDir: 'docs',
+  assetsDir: './',
+  publicPath: './',
 }

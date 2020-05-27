@@ -1,0 +1,47 @@
+@import '_normalize.css';
+
+.table{
+  display: grid;
+  grid-template-columns: repeat(18,1fr);
+  grid-template-rows: repeat(9, 1fr);
+}
+
+/* Every element box  */
+.element {
+  cursor: pointer;
+  width: 5vw;
+  height: 5vw;
+  padding: 2px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.number {
+  float: left;
+  font-size: 0.5vw;
+  position: absolute;
+}
+
+.symbol {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0.5vw;
+  font-size: 2vw;
+}
+
+.element-name {
+  font-size: 0.8vw;
+  text-align: center;
+}
+
+.elemInfo{
+  grid-column-start:3;
+  grid-column-end:13;
+  grid-row-start:1;
+  grid-row-end:4;
+}
+
+.element_card{
+  widows: 15vw;
+  height:15vw;
+}
