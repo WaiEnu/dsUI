@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.e7b54d91688ffbaec858cced686d7a24.js"
+  "precache-manifest.f9481f22d349bd8629380d8c96fb97d6.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "periodic-table"});
