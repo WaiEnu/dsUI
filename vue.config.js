@@ -1,7 +1,6 @@
 module.exports = {
   outputDir: 'docs',
-  assetsDir: './',
-  publicPath: '/periodic-table/',
+  publicPath: 'periodic-table',
 
   "transpileDependencies": [
     "vuetify"
