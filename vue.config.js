@@ -5,5 +5,5 @@ module.exports = {
 
   outputDir: 'docs',
   assetsDir: './',
-  publicPath: './',
+  publicPath: '/periodic-table/',
 }
