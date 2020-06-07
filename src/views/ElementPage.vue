@@ -1,11 +1,9 @@
 <template>
   <v-content>
     <v-container class="fill-height" fluid>
-      <v-row class="text-center">
+      <v-row class="text-center" justify="start" align="start">
         <v-col cols="12">
-          <v-sheet>
-            <Page :element="elements[id]" />
-          </v-sheet>
+          <Page :element="elements[id]" class="pa-0 mx-auto"/>
         </v-col>
       </v-row>
     </v-container>

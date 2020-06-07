@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0aa26b9ce4cae7c0a71b",
+    "revision": "9c0b7316d7f55a614fb9",
     "url": "/periodic-table/css/chunk-0ceb50e4.a1562d3e.css"
   },
   {
-    "revision": "0c9ca5ea3a82ebdd260c",
-    "url": "/periodic-table/css/chunk-20e19014.4d9c5a05.css"
+    "revision": "1a1b308d7d489535247f",
+    "url": "/periodic-table/css/chunk-7eb29580.5754af58.css"
   },
   {
-    "revision": "9a6e02c2de289082b569",
-    "url": "/periodic-table/css/chunk-2cec7bdb.626a09b2.css"
+    "revision": "0bedc833365dbe897142",
+    "url": "/periodic-table/css/chunk-af2ea1d8.4faa308a.css"
   },
   {
     "revision": "ec0adf661fc91d2b0b76",
@@ -20,28 +20,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/periodic-table/css/reset.css"
   },
   {
-    "revision": "c565b05d653111ebc7ef40b48a405dba",
+    "revision": "5f6ecdb7ed3f65e5909acf49658717c3",
     "url": "/periodic-table/css/style.css"
   },
   {
-    "revision": "86aba8418aa3684f7dc137158e69c53b",
+    "revision": "3fffceb1c2a5d6c822c809875dd46773",
     "url": "/periodic-table/index.html"
   },
   {
-    "revision": "ca52350ee5f472b89e76",
-    "url": "/periodic-table/js/app.45f8d502.js"
+    "revision": "88d6a030e8694a094bf8",
+    "url": "/periodic-table/js/app.c7a89f77.js"
   },
   {
-    "revision": "0aa26b9ce4cae7c0a71b",
-    "url": "/periodic-table/js/chunk-0ceb50e4.afbbdc62.js"
+    "revision": "9c0b7316d7f55a614fb9",
+    "url": "/periodic-table/js/chunk-0ceb50e4.8468c834.js"
   },
   {
-    "revision": "0c9ca5ea3a82ebdd260c",
-    "url": "/periodic-table/js/chunk-20e19014.a0e295e1.js"
+    "revision": "1a1b308d7d489535247f",
+    "url": "/periodic-table/js/chunk-7eb29580.b7a473e1.js"
   },
   {
-    "revision": "9a6e02c2de289082b569",
-    "url": "/periodic-table/js/chunk-2cec7bdb.edb8a8e3.js"
+    "revision": "0bedc833365dbe897142",
+    "url": "/periodic-table/js/chunk-af2ea1d8.d557f7cb.js"
   },
   {
     "revision": "ec0adf661fc91d2b0b76",
