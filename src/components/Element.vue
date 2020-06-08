@@ -2,12 +2,13 @@
   <v-card
     outlined=""
     :title="element.name"
-    :class="`element element-${element.number} ${category[1]}`"
-    @dblclick="showElem(element.number)"
-  >
-    <div class="number">{{ element.number }}</div>
-    <div class="symbol">{{ element.symbol }}</div>
-    <div class="element-name">{{ element.name }}</div>
+    @dblclick="showElem(element.number)">
+    <div
+      :class="`element element-${element.number} ${category[1]}`">
+      <div class="number">{{ element.number }}</div>
+      <div class="symbol">{{ element.symbol }}</div>
+      <div class="element-name">{{ element.name }}</div>
+    </div>
   </v-card>
 </template>
 
